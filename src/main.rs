@@ -1,5 +1,6 @@
 use rand::prelude::*;
 mod quicksort;
+
 use std::fs;
 use std::io::Write;
 
