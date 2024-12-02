@@ -8,35 +8,29 @@ pub fn sort(array: &mut [i32]) {
 
 
 fn quick_sort_part(array: &mut [i32],start:isize,end:isize) {
-    if start < end && end - start >= 1 {
+    if start < end {
         let pivot = part(array, start as isize, end as isize);
-        quick_sort_part(array, start,pivot as isize - 1);
-        quick_sort_part(array, start + 1, end);
+        quick_sort_part(array, start,pivot-1);
+        quick_sort_part(array, pivot+1, end);
     }
 }
 
 fn part(array: &mut [i32], left: isize, right: isize) -> isize {
-    let pivot = array[left as usize];
-    let mut i = left - 1;
-    let mut j = right;
+    let pivot = right;
+    let mut i = left as isize - 1;
+    
 
-    loop {
+    for j in left..=right-1 {
 
-        loop    {
+        if array[j as usize] < array[pivot as usize] {
             i+=1;
-            if array[i as usize] >= pivot { break; }  
+            array.swap(i as usize, j as usize);
         }
-
-        loop    {
-            j-=1;
-            if array[j as usize] <= pivot { break; }
-        }
-
-        if i > j { break; }
-
-        array.swap(i as usize, j as usize);
-
     }
 
-    return i + 1;
+
+    array.swap((i+1) as usize , pivot as usize);
+
+    return i+1;
+
 }
