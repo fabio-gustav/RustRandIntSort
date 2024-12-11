@@ -1,3 +1,7 @@
+//generates 500 random integers and sorts them
+//writes the inital 500 integers to a file named unsorted.txt
+//writes the 500 sorted integers to a file named sorted.txt
+
 //imports for random number generation, file reading/writing, and a function for quicksort
 use rand::prelude::*;
 mod quicksort;  
