@@ -5,6 +5,7 @@ use std::isize;
 pub fn sort(array: &mut [i32]) {
     let start = 0;
     let end = array.len() - 1;
+    //sorts the array using quick sort
     quick_sort_part(array,start,end as isize)
 }
 

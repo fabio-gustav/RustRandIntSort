@@ -1,6 +1,10 @@
-use rand::prelude::*;
-mod quicksort;
+//generates 500 random integers and sorts them
+//writes the inital 500 integers to a file named unsorted.txt
+//writes the 500 sorted integers to a file named sorted.txt
 
+//imports for random number generation, file reading/writing, and a function for quicksort
+use rand::prelude::*;
+mod quicksort;  
 use std::fs;
 use std::io::Write;
 
@@ -8,6 +12,8 @@ fn main() {
     println!("Sorting Program Example");
 
     println!("Generating Numbers to Sort");
+
+    //creates a thread for random number generation
     let mut rng = thread_rng();
 
     //creates a file of 500 unsorted integers, each ranging from 1-500 inclusive
