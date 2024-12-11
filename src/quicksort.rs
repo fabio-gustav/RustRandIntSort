@@ -1,12 +1,14 @@
 use std::isize;
 
+//Public function to start a sort
+//Returns the sorted array
 pub fn sort(array: &mut [i32]) {
     let start = 0;
     let end = array.len() - 1;
     quick_sort_part(array,start,end as isize)
 }
 
-
+// Quicksort partition function
 fn quick_sort_part(array: &mut [i32],start:isize,end:isize) {
     if start < end {
         let pivot = part(array, start as isize, end as isize);
@@ -15,8 +17,9 @@ fn quick_sort_part(array: &mut [i32],start:isize,end:isize) {
     }
 }
 
+//Rest of the quicksort partition
 fn part(array: &mut [i32], left: isize, right: isize) -> isize {
-    let pivot = right;
+    let pivot = right; //Pivot at right end
     let mut i = left as isize - 1;
     
 
